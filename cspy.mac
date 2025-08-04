@@ -1,0 +1,14 @@
+__var brk1;
+
+execUserSetup()
+{
+  __message "execUserSetup() called.\n";
+
+  // __setDataBreak(location, access, extend, match, data, mask)
+  brk1 = __setDataBreak("b", "R", "FALSE", "TRUE", 2, 0xFFFFFFFF);
+}
+
+execUserExit()
+{
+  ___clearBreak(brk1);
+}
