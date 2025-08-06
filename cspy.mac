@@ -10,10 +10,10 @@ execUserSetup()
   brk1 = __setDataBreak("a", "W", "FALSE", "TRUE", 0x10000, 0xFFFFFFFF);
 
   // __setDataLogBreak(variable, access, extend)
-  brk2 = __setDataLogBreak("b", "W", "TRUE");
+  brk2 = __setDataLogBreak("b", "R", "TRUE");
 
   // __setLogBreak(location, message, msg_type, condition, cond_type:TRUE/CHANGED)
-  brk3 = __setLogBreak("{main.c}.25.5", "\"The value of c is \", c:%d", "ARGS", "1", "TRUE");
+  brk3 = __setLogBreak("{main.c}.25.5", "\"The value of c is \", c:%d", "ARGS", "1", "CHANGED");
 }
 
 execUserExit()

@@ -1,5 +1,3 @@
-#include <intrinsics.h>
-
 int a = 0;
 int b = 0;
 int c = 0;
@@ -16,7 +14,7 @@ int main()
   while (b < 100)
   {
     b++;
-    __no_operation();
+    for (unsigned int i = 0; i < 300; i++);
   }
 
   // __setLogBreak()
