@@ -1,12 +1,29 @@
-int a @ 0x20000000 = 1;
-int b @ 0x20000004 = 1;
-int c @ 0x20000008 = 3;
+#include <intrinsics.h>
+
+int a = 0;
+int b = 0;
+int c = 0;
 
 int main()
 {
-  int res = c;
-  b++;
-  res -= b;
-  res -= a;
-  return res;
+  // __setDataBreak()
+  while (a < 0x0001FFFF)
+  {
+    a++;
+  }
+  
+  // __setDataLogBreak()
+  while (b < 100)
+  {
+    b++;
+    __no_operation();
+  }
+
+  // __setLogBreak()
+  while (c < 10)
+  {
+    c++;
+  }
+  
+  return 0;
 }

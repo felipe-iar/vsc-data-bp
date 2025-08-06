@@ -610,15 +610,15 @@
                 <option>
                     <name>IjetResetList</name>
                     <version>1</version>
-                    <state>9</state>
+                    <state>2</state>
                 </option>
                 <option>
                     <name>IjetHWResetDuration</name>
-                    <state>300</state>
+                    <state>10</state>
                 </option>
                 <option>
                     <name>IjetHWResetDelay</name>
-                    <state>200</state>
+                    <state>10</state>
                 </option>
                 <option>
                     <name>IjetPowerFromProbe</name>
@@ -667,7 +667,7 @@
                 </option>
                 <option>
                     <name>IjetProtocolRadio</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IjetSwoPin</name>
@@ -675,7 +675,7 @@
                 </option>
                 <option>
                     <name>IjetCpuClockEdit</name>
-                    <state>180.0</state>
+                    <state>168</state>
                 </option>
                 <option>
                     <name>IjetSwoPrescalerList</name>
@@ -874,7 +874,7 @@
                 </option>
                 <option>
                     <name>IjetHWResetTimingOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
             </data>
         </settings>

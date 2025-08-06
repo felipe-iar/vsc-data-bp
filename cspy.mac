@@ -1,14 +1,26 @@
 __var brk1;
+__var brk2;
+__var brk3;
 
 execUserSetup()
 {
   __message "execUserSetup() called.\n";
 
   // __setDataBreak(location, access, extend, match, data, mask)
-  brk1 = __setDataBreak("b", "R", "FALSE", "TRUE", 2, 0xFFFFFFFF);
+  brk1 = __setDataBreak("a", "W", "FALSE", "TRUE", 0x10000, 0xFFFFFFFF);
+
+  // __setDataLogBreak(variable, access, extend)
+  brk2 = __setDataLogBreak("b", "W", "TRUE");
+
+  // __setLogBreak(location, message, msg_type, condition, cond_type:TRUE/CHANGED)
+  brk3 = __setLogBreak("{main.c}.25.5", "\"The value of c is \", c:%d", "ARGS", "1", "TRUE");
 }
 
 execUserExit()
 {
-  ___clearBreak(brk1);
+  __message "execUserExit() called.\n";
+
+  __clearBreak(brk1);
+  __clearBreak(brk2);
+  __clearBreak(brk3);
 }
